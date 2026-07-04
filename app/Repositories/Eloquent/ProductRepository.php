@@ -13,33 +13,37 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function all(): Collection
     {
-        // TODO
+         return $this->product->all();
     }
 
     public function findById(int $id): ?Product
     {
-       // TODO
+         return $this->product->find($id);
     }
 
     public function create(array $data): Product
     {
-       // TODO
+         return $this->product->create($data);   
     }
 
     
     public function update(Product $product, array $data): Product
     {
-       // TODO
+         $product->update($data);
+         return $product;   
     }
 
     public function delete(Product $product): bool
     {
-        // TODO
+        return $product->delete();
     }
 
     public function search(string $query): Collection
     {
-       // TODO    
+         return  $this->product->where('title', 'like', "%{$query}%")
+                                  ->orWhere('description', 'like', "%{$query}%")
+                                  ->get();
+        
     }
 
 
