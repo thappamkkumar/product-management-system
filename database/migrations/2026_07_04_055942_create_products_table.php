@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->longText('description');
+            $table->decimal('price', 10, 2);
+            $table->date('date_available');
+
             $table->timestamps();
         });
     }
