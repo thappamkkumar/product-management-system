@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Services\ProductService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -19,11 +20,18 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
-        $this->authorize('viewAny', Product::class);
+         $this->authorize('viewAny', Product::class);
 
-        $products = $this->productService->getAllProducts();
+        $search = $request->input('search');
+
+        if ($search) {
+            $products = $this->productService->searchProducts($search);
+        } else {
+            $products = $this->productService->getAllProducts();
+        }
+
 
         return view('products.index', compact('products'));
     }

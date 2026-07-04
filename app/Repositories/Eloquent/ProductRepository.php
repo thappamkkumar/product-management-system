@@ -2,7 +2,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Product;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use App\Repositories\Interfaces\ProductRepositoryInterface;
 
 class ProductRepository implements ProductRepositoryInterface
@@ -11,9 +11,9 @@ class ProductRepository implements ProductRepositoryInterface
     public function __construct(private Product $product)
     {}
 
-    public function all(): Collection
+    public function all(): LengthAwarePaginator
     {
-         return $this->product->all();
+         return $this->product->latest()->paginate(10);
     }
 
     public function findById(int $id): ?Product
@@ -38,11 +38,13 @@ class ProductRepository implements ProductRepositoryInterface
         return $product->delete();
     }
 
-    public function search(string $query): Collection
+    public function search(string $query): LengthAwarePaginator
     {
          return  $this->product->where('title', 'like', "%{$query}%")
                                   ->orWhere('description', 'like', "%{$query}%")
-                                  ->get();
+                                  ->latest()
+                                  ->paginate(10)
+                                  ->withQueryString();
         
     }
 

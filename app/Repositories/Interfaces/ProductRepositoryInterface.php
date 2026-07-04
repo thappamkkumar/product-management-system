@@ -2,13 +2,13 @@
 namespace App\Repositories\Interfaces;
 
 use App\Models\Product;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 interface ProductRepositoryInterface
 {
        
 
-    public function all(): Collection;
+    public function all(): LengthAwarePaginator;
 
     public function findById(int $id): ?Product;
 
@@ -18,5 +18,5 @@ interface ProductRepositoryInterface
 
     public function delete(Product $product): bool;
 
-    public function search(string $query): Collection;
+    public function search(string $query): LengthAwarePaginator;
 }

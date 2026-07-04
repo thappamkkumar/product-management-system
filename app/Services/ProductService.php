@@ -3,7 +3,7 @@ namespace App\Services;
 
 use App\Repositories\Interfaces\ProductRepositoryInterface;
 use App\Models\Product;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class ProductService
 {
@@ -11,7 +11,7 @@ class ProductService
     public function __construct(private ProductRepositoryInterface $productRepository)
     {}
 
-    public function getAllProducts(): Collection
+    public function getAllProducts(): LengthAwarePaginator
     {
          return $this->productRepository->all();
     }
@@ -37,7 +37,7 @@ class ProductService
         return $this->productRepository->delete($product);
     }
 
-    public function searchProducts(string $query): Collection
+    public function searchProducts(string $query): LengthAwarePaginator
     {
        return $this->productRepository->search($query);
     }
