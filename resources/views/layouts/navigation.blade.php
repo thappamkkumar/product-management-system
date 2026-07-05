@@ -1,56 +1,17 @@
 <nav x-data="{ open: false }" class="border-b border-gray-200 bg-white shadow-sm">
 
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-6 py-4"">
 
-        <div class="flex h-16 justify-between">
+        <div class="flex h-18 items-center justify-between ">
 
             <!-- Left Side -->
-            <div class="flex">
+            <div class="flex items-center gap-8">
 
                 <!-- Logo -->
-                <div class="flex shrink-0 items-center">
-
-                    <a
-                        href="{{ route('dashboard') }}"
-                        class="flex items-center gap-3"
-                    >
-
-                        <x-application-logo
-                            class="h-10 w-10 text-indigo-600"
-                        />
-
-                        <div>
-
-                            {{-- Desktop --}}
-                            <div class="hidden sm:block">
-
-                                <h1 class="text-lg font-bold leading-none text-gray-900">
-                                    Product Management
-                                </h1>
-
-                                <p class="text-xs text-gray-500">
-                                    System
-                                </p>
-
-                            </div>
-
-                            {{-- Mobile --}}
-                            <div class="sm:hidden">
-
-                                <h1 class="text-lg font-bold text-gray-900">
-                                    PMS
-                                </h1>
-
-                            </div>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
+                 <x-app-logo />
+ </div>
                 <!-- Navigation -->
-                <div class="hidden space-x-8 sm:ms-10 sm:flex">
+                <div class="hidden items-center gap-8 sm:flex">
 
                     <x-nav-link
                         :href="route('dashboard')"
@@ -68,7 +29,7 @@
 
                 </div>
 
-            </div>
+           
 
             <!-- User Dropdown -->
             <div class="hidden sm:ms-6 sm:flex sm:items-center">
@@ -78,7 +39,7 @@
                     <x-slot name="trigger">
 
                         <button
-                            class="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium text-gray-600 transition hover:text-indigo-600 focus:outline-none">
+                           class="inline-flex items-center gap-2 rounded-lg border border-transparent bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:text-indigo-600 focus:outline-none">
 
                             <div class="font-semibold">
                                 {{ Auth::user()->name }}
@@ -139,7 +100,7 @@
 
                 <button
                     @click="open = ! open"
-                    class="inline-flex items-center justify-center rounded-md p-2 text-gray-500 transition hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700 focus:outline-none">
+                    class="inline-flex items-center justify-center rounded-lg p-2 text-gray-500 transition hover:bg-gray-100 hover:text-gray-700 focus:bg-gray-100 focus:text-gray-700 focus:outline-none">
 
                     <svg
                         class="h-6 w-6"
@@ -182,7 +143,7 @@
         class="hidden sm:hidden"
     >
 
-        <div class="space-y-1 pt-2 pb-3">
+        <div class="space-y-1 px-3 py-3">
 
             <x-responsive-nav-link
                 :href="route('dashboard')"
@@ -200,7 +161,7 @@
 
         </div>
 
-        <div class="border-t border-gray-200 pt-4 pb-2">
+       <div class="border-t border-gray-200 px-3 py-4">
 
             <div class="px-4">
 
