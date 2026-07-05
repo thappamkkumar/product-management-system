@@ -36,9 +36,9 @@
                             Description
                         </p>
 
-                        <p class="mt-2 text-gray-800">
-                            {{ $product->description }}
-                        </p>
+                        <div class="prose max-w-none mt-2">
+                            {!! $product->description !!}
+                        </div>
                     </div>
 
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">

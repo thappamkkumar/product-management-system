@@ -68,9 +68,9 @@
                         </label>
 
                         <textarea
-                            id="description"
+                            id="editor"
                             name="description"
-                            rows="5"
+                            rows="15"
                             placeholder="Enter product description"
                             class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                         >{{ old('description') }}</textarea>

@@ -69,7 +69,7 @@
                         </label>
 
                         <textarea
-                            id="description"
+                            id="editor"
                             name="description"
                             rows="5"
                             placeholder="Enter product description"

@@ -1,3 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+
+    /* CKEditor */
+    .ck-editor__editable_inline {
+        min-height: 300px;
+    }
+
+    /* Rich Text Tables */
+    .prose table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .prose table th,
+    .prose table td {
+        border: 1px solid #d1d5db;
+        padding: 0.75rem;
+    }
+
+    .prose table th {
+        background-color: #f3f4f6;
+        font-weight: 600;
+    }
+
+    .prose table tr:nth-child(even) {
+        background-color: #f9fafb;
+    }
