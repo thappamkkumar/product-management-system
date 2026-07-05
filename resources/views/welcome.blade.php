@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="border-b bg-white shadow-sm">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
+ 
             <a
                 href="{{ route('home') }}"
                 class="flex items-center gap-3"
@@ -209,17 +209,7 @@
 
     <!-- Footer -->
 
-    <footer class="border-t bg-gray-50 py-6">
-
-        <div class="text-center text-sm text-gray-500">
-
-            © {{ date('Y') }} {{ config('app.name') }}.
-
-            Built with Laravel using enterprise development practices.
-
-        </div>
-
-    </footer>
+    <x-footer />
 
 </body>
 
