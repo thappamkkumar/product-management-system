@@ -51,7 +51,7 @@ The application follows Laravel best practices by implementing a **Service Layer
 
 ## Tech Stack
 
-- Laravel 12
+-- Laravel 12
 - PHP 8.2
 - MySQL
 - Blade
@@ -60,6 +60,7 @@ The application follows Laravel best practices by implementing a **Service Layer
 - CKEditor 5
 - Vite
 - Bash
+- Pest
 - Git & GitHub
 
 ---
@@ -142,6 +143,13 @@ npm install
 ```bash
 php artisan migrate
 ```
+### (Optional) Seed the Database
+
+To create the default administrator account and sample data, run:
+
+```bash
+php artisan db:seed
+```
 
 ### Build Frontend Assets
 
@@ -165,11 +173,11 @@ http://127.0.0.1:8000
 
 ## Default Login Credentials
 
-### Administrator
+Available after running the database seeder.
 
-| Email | Password |
-|-------|----------|
-| admin@example.com | Admin@123 |
+| Role | Email | Password |
+|------|-------|----------|
+| Administrator | admin@example.com | Admin@123 |
 
 ---
 
@@ -240,6 +248,27 @@ Run the deployment script:
 ```bash
 bash deploy.sh
 ```
+
+
+---
+
+## Testing
+
+The project includes automated tests to verify core application functionality.
+
+Run the test suite using:
+
+```bash
+php artisan test
+```
+
+The test suite covers:
+
+- Authentication
+- Product CRUD functionality
+- Authorization
+- Database interactions
+
 
 ---
 
