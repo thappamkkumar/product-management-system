@@ -8,7 +8,7 @@
             </h2>
 
             <a
-                href="{{ url()->previous() }}"
+                href="{{ route('products.index') }}"
                 class="rounded-lg border border-gray-300 px-5 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
             >
                 ← Back
