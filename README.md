@@ -51,7 +51,7 @@ The application follows Laravel best practices by implementing a **Service Layer
 
 ## Tech Stack
 
--- Laravel 12
+- Laravel 12
 - PHP 8.2
 - MySQL
 - Blade
