@@ -1,6 +1,16 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
+
+uses(RefreshDatabase::class);
+
+/*
+beforeEach(function () {
+    $this->withoutMiddleware(ValidateCsrfToken::class);
+});
+*/
 
 test('profile page is displayed', function () {
     $user = User::factory()->create();
