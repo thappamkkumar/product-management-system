@@ -1,59 +1,258 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Product Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern **Product Management System** built with **Laravel 12**, featuring authentication, role-based authorization, product CRUD operations, search, pagination, rich text editing, and a responsive user interface.
 
-## About Laravel
+The application follows Laravel best practices by implementing a **Service Layer**, **Repository Pattern**, **Form Requests**, **Policies**, and clean architecture to ensure maintainability, scalability, and readability.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- User Authentication (Laravel Breeze)
+- Role-Based Authorization (Admin & User)
+- Dashboard with Product Statistics
+- Product CRUD Operations
+- Product Search
+- Pagination
+- Rich Text Editor (CKEditor 5)
+- Form Validation using Form Requests
+- Authorization using Laravel Policies
+- Repository Pattern
+- Service Layer Architecture
+- Responsive Design using Tailwind CSS
+- Custom Error Pages (403, 404, 500)
+- Deployment Automation with Bash Script
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Screenshots
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Landing Page
 
-## Laravel Sponsors
+![Landing Page](screenshots/home.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Dashboard
 
-### Premium Partners
+![Dashboard](screenshots/dashboard.png)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Products
 
-## Contributing
+![Products](screenshots/products.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Product Details
 
-## Code of Conduct
+![Product Details](screenshots/product-details.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Create Product
 
-## Security Vulnerabilities
+![Create Product](screenshots/create-product.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
+
+## Tech Stack
+
+- Laravel 12
+- PHP 8.2
+- MySQL
+- Blade
+- Tailwind CSS
+- Laravel Breeze
+- CKEditor 5
+- Vite
+- Bash
+- Git & GitHub
+
+---
+
+## Requirements
+
+- PHP 8.2 or later
+- Composer
+- Node.js & npm
+- MySQL
+- Git
+
+---
+
+## Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/thappamkkumar/product-management-system.git
+
+cd product-management-system
+```
+
+---
+
+## Option 1: Automated Setup (Recommended)
+
+Run the deployment script:
+
+```bash
+bash deploy.sh
+```
+
+The deployment script automatically:
+
+- Creates the `.env` file (if it does not exist)
+- Installs Composer dependencies
+- Installs Node.js dependencies
+- Generates the application key
+- Runs database migrations
+- Optionally seeds the database
+- Builds frontend assets
+- Optimizes the Laravel application
+
+---
+
+## Option 2: Manual Setup
+
+### Install PHP Dependencies
+
+```bash
+composer install
+```
+
+### Create Environment File
+
+```bash
+cp .env.example .env
+```
+
+### Configure Database
+
+Update your database credentials inside the `.env` file.
+
+### Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+### Install Frontend Dependencies
+
+```bash
+npm install
+```
+
+### Run Database Migrations
+
+```bash
+php artisan migrate
+```
+
+### Build Frontend Assets
+
+```bash
+npm run build
+```
+
+### Start Development Server
+
+```bash
+php artisan serve
+```
+
+Visit:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Default Login Credentials
+
+### Administrator
+
+| Email | Password |
+|-------|----------|
+| admin@example.com | Admin@123 |
+
+---
+
+## Project Structure
+
+```text
+app/
+├── Http/
+│   ├── Controllers/
+│   ├── Requests/
+│   └── Middleware/
+├── Models/
+├── Policies/
+├── Repositories/
+└── Services/
+
+database/
+├── migrations/
+└── seeders/
+
+resources/
+├── views/
+├── css/
+└── js/
+
+routes/
+deploy.sh
+README.md
+```
+
+---
+
+## Architecture
+
+The application follows Laravel best practices and clean architecture principles.
+
+- MVC Architecture
+- Repository Pattern for data access
+- Service Layer for business logic
+- Form Requests for validation
+- Policies for authorization
+- Eloquent ORM
+- Blade Templating Engine
+- Dependency Injection
+- SOLID Principles
+
+---
+
+## Deployment
+
+The project includes a Bash deployment script (`deploy.sh`) that automates the complete setup process.
+
+The script performs the following tasks:
+
+- Verifies required tools (PHP, Composer, Node.js, npm)
+- Detects the Laravel project
+- Creates the `.env` file if it does not exist
+- Installs Composer dependencies
+- Installs Node.js dependencies
+- Generates the application key
+- Runs database migrations
+- Optionally seeds the database
+- Builds frontend assets
+- Optimizes the Laravel application
+
+Run the deployment script:
+
+```bash
+bash deploy.sh
+```
+
+---
+
+## Author
+
+**Mukesh Kumar**
+
+- 🌐 Portfolio: https://mukeshkumar.vercel.app/
+- 💻 GitHub: https://github.com/thappamkkumar
+- 🔗 LinkedIn: https://www.linkedin.com/in/engineer-mukesh-kumar/
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project was developed as part of a Laravel technical assignment and is intended for educational and demonstration purposes.
