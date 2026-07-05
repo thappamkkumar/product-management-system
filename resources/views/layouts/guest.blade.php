@@ -17,20 +17,58 @@
 </head>
 
 <body class="bg-gray-100 font-sans text-gray-900 antialiased overflow-auto">
+     <!-- Header -->
+    <header class="border-b bg-white shadow-sm">
+        <div class="  flex   items-center justify-between px-6 py-4">
 
-    <div class="flex min-h-screen flex-col items-center justify-center px-4 py-4">
+        
 
-        <!-- Header -->
-        <div class="mb-8 flex w-full max-w-md items-center justify-between">
+            <a
+                href="{{ route('home') }}"
+                class="flex items-center gap-3"
+            >
 
-            <a href="{{ route('home') }}"
-                class="text-sm font-medium text-indigo-600 transition hover:text-indigo-800">
-                ← Back to Home
+                <x-application-logo
+                    class="h-10 w-10 text-indigo-600"
+                />
+
+                <div>
+
+                    {{-- Desktop --}}
+                    <div class="hidden sm:block">
+
+                        <h1 class="text-lg font-bold leading-none text-gray-900">
+                            Product Management
+                        </h1>
+
+                        <p class="text-xs text-gray-500">
+                            System
+                        </p>
+
+                    </div>
+
+                    {{-- Mobile --}}
+                    <div class="sm:hidden">
+
+                        <h1 class="text-lg font-bold text-gray-900">
+                            PMS
+                        </h1>
+
+                    </div>
+
+                </div>
+
             </a>
-
-             
-
+                
+            <a href="{{ route('home') }}"
+                class="rounded-lg border border-gray-300 px-5 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">
+                ← Back   
+            </a>
         </div>
+    </header>
+    <main class="flex min-h-screen flex-col items-center justify-center px-4 py-4">
+
+       
 
         <!-- Card -->
         <div class="w-full max-w-md overflow-hidden rounded-xl bg-white px-8 py-6 shadow-lg">
@@ -39,8 +77,10 @@
 
         </div>
 
-    </div>
+    </main>
 
+    <!-- Footer -->
+     <x-footer />
 </body>
 
 </html>

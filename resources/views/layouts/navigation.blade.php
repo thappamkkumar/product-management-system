@@ -10,15 +10,40 @@
                 <!-- Logo -->
                 <div class="flex shrink-0 items-center">
 
-                    <a href="{{ route('dashboard') }}" class="flex items-center gap-2">
+                    <a
+                        href="{{ route('dashboard') }}"
+                        class="flex items-center gap-3"
+                    >
 
                         <x-application-logo
-                            class="h-9 w-9 fill-current text-indigo-600"
+                            class="h-10 w-10 text-indigo-600"
                         />
 
-                        <span class="text-lg font-bold text-gray-900">
-                            {{ config('app.name') }}
-                        </span>
+                        <div>
+
+                            {{-- Desktop --}}
+                            <div class="hidden sm:block">
+
+                                <h1 class="text-lg font-bold leading-none text-gray-900">
+                                    Product Management
+                                </h1>
+
+                                <p class="text-xs text-gray-500">
+                                    System
+                                </p>
+
+                            </div>
+
+                            {{-- Mobile --}}
+                            <div class="sm:hidden">
+
+                                <h1 class="text-lg font-bold text-gray-900">
+                                    PMS
+                                </h1>
+
+                            </div>
+
+                        </div>
 
                     </a>
 
