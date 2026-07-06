@@ -272,6 +272,117 @@ The test suite covers:
 
 ---
 
+## Architecture Decisions
+
+The application follows a layered architecture to improve maintainability, scalability, and testability.
+
+### Repository Pattern
+The Repository Pattern abstracts database operations from the business logic. This keeps controllers and services independent of Eloquent, making future changes easier.
+
+### Service Layer
+Business logic is implemented inside services rather than controllers. Controllers are responsible only for handling HTTP requests and responses.
+
+### Form Requests
+Validation is handled using Laravel Form Requests, keeping controllers clean and ensuring reusable validation rules.
+
+### Policies
+Authorization is implemented using Laravel Policies to enforce role-based access control for product operations.
+
+### MVC Architecture
+The project follows Laravel's MVC architecture, separating presentation, business logic, and data access responsibilities.
+
+---
+
+## Challenges & Solutions
+
+### Role-Based Authorization
+
+**Challenge**
+
+Different permissions were required for administrators and regular users.
+
+**Solution**
+
+Laravel Policies were implemented to centralize authorization logic and ensure users can only perform actions they are permitted to access.
+
+---
+
+### Clean Code Organization
+
+**Challenge**
+
+Business logic inside controllers becomes difficult to maintain as the application grows.
+
+**Solution**
+
+Business logic was moved into a dedicated Service Layer while database operations were abstracted using the Repository Pattern.
+
+---
+
+### Responsive Data Tables
+
+**Challenge**
+
+Product tables overflowed on smaller screens.
+
+**Solution**
+
+Responsive containers with horizontal scrolling were implemented to ensure usability across mobile and desktop devices.
+
+---
+
+### Deployment Automation
+
+**Challenge**
+
+Manual project setup requires multiple repetitive commands.
+
+**Solution**
+
+A Bash deployment script was created to automate dependency installation, environment configuration, migrations, asset building, and optimization.
+
+
+---
+
+
+## Security & Performance
+
+### Security
+
+- Authentication using Laravel Breeze.
+- Authorization using Laravel Policies.
+- Form Request validation for all user inputs.
+- CSRF protection provided by Laravel.
+- Password hashing using Laravel's built-in hashing mechanism.
+- Eloquent ORM used to prevent SQL injection.
+- Environment variables stored securely using the `.env` file.
+
+### Performance
+
+- Database indexing on frequently queried columns to improve search and filtering performance.
+- Pagination implemented to avoid loading unnecessary records.
+- Product search optimized using Eloquent query filtering.
+- Laravel optimization commands included in the deployment script.
+- Vite used for efficient frontend asset bundling.
+- Service Layer and Repository Pattern improve maintainability and scalability.
+
+---
+
+## Future Improvements
+
+If this project were expanded into a production SaaS application, the following enhancements would be implemented:
+
+- REST API for third-party integrations.
+- Product image upload and cloud storage.
+- Redis caching for improved performance.
+- Queue-based background job processing.
+- Docker and CI/CD pipeline. 
+- Advanced search and filtering.
+- Increased automated test coverage.
+  
+
+---
+
 ## Author
 
 **Mukesh Kumar**

@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->index('title');
-            $table->index('created_at');
-            $table->index('date_available');
+            $table->index('created_at'); 
         });
         
         Schema::table('users', function (Blueprint $table) {
@@ -29,8 +28,7 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
         $table->dropIndex(['title']);
-        $table->dropIndex(['created_at']);
-        $table->dropIndex(['date_available']);
+        $table->dropIndex(['created_at']); 
         });
 
         Schema::table('users', function (Blueprint $table) {
