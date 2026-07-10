@@ -7,11 +7,11 @@ use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 
 uses(RefreshDatabase::class);
 
-/*
+ 
 beforeEach(function () {
     $this->withoutMiddleware(ValidateCsrfToken::class);
 });
-*/
+ 
 
 it('admin can create a product', function () {
 

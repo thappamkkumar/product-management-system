@@ -6,11 +6,11 @@ use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 
 uses(RefreshDatabase::class);
 
-/*
+
 beforeEach(function () {
     $this->withoutMiddleware(ValidateCsrfToken::class);
 });
-*/
+
 
 it('shows the login page', function () {
     $this->get(route('login'))

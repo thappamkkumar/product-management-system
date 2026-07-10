@@ -6,11 +6,11 @@ use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 
 uses(RefreshDatabase::class);
 
-/*
+ 
 beforeEach(function () {
     $this->withoutMiddleware(ValidateCsrfToken::class);
 });
-*/
+ 
 
 test('profile page is displayed', function () {
     $user = User::factory()->create();
